@@ -24,7 +24,7 @@ function initializeProductList(size) {
         .then(products => {
             document.getElementById('productList').innerHTML = '';
             products.forEach((product, index) => {
-                if (product.size === size) {
+                if (product.size === size||size==0) {
                     addProductCard(product, index);
                 }
             });
