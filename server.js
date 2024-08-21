@@ -14,6 +14,11 @@ function reloadWebsite() {
         }
         return response.json();
     })
+    .then(products => {
+        document.getElementById('productList').innerHTML = '';
+        products.forEach((product, index) => {
+        });
+    })
     .catch(error => console.error('Error fetching products:', error));
 }
 
