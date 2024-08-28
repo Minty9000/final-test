@@ -7,7 +7,7 @@ const interval = 30000; // Interval in milliseconds (30 seconds)
 
 //Reloader Function
 function reloadWebsite() {
-     fetch('https://final-test-7fvk.onrender.com/data')
+     fetch('https://sneaker-serer.onrender.com/data')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
