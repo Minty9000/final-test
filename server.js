@@ -6,21 +6,20 @@ const port = 3000;
 const interval = 30000; // Interval in milliseconds (30 seconds)
 
 //Reloader Function
+const url = `https://sneaker-serer.onrender.com/`; // Replace with your Render URL
+const interval = 30000; // Interval in milliseconds (30 seconds)
+
+//Reloader Function
 function reloadWebsite() {
-     fetch('https://sneaker-serer.onrender.com/data')
+  axios.get(url)
     .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
+      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
     })
-    .then(products => {
-        document.getElementById('productList').innerHTML = '';
-        products.forEach((product, index) => {
-        });
-    })
-    .catch(error => console.error('Error fetching products:', error));
+    .catch(error => {
+      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
+    });
 }
+
 
 setInterval(reloadWebsite, interval);
 // Initialize an empty array to store products
