@@ -7,8 +7,6 @@ const interval = 30000; // Interval in milliseconds (30 seconds)
 
 //Reloader Function
 const url = `https://sneaker-serer.onrender.com/`; // Replace with your Render URL
-const interval = 30000; // Interval in milliseconds (30 seconds)
-
 //Reloader Function
 function reloadWebsite() {
   axios.get(url)
