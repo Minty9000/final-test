@@ -9,7 +9,7 @@ const interval = 30000; // Interval in milliseconds (30 seconds)
 const url = `https://sneaker-serer.onrender.com/`; // Replace with your Render URL
 //Reloader Function
 function reloadWebsite() {
-  axios.get(url)
+  fetch(url)
     .then(response => {
       console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
     })
@@ -17,7 +17,6 @@ function reloadWebsite() {
       console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
     });
 }
-
 
 setInterval(reloadWebsite, interval);
 // Initialize an empty array to store products
